@@ -59,9 +59,17 @@ console.log(validateCred(mystery4)); //returns false
 console.log(validateCred(mystery5)); //returns true
 
 const findInvalidCards = arr => {
-
+    let invalid = [];
+    for(let i = 0; i < arr.length; i++){
+        let card = arr[i];
+        if(validateCred(card) === false){
+            invalid.push(card);
+        }
+    }
+    return invalid;
 };
 
-
+//will print all invalid card numbers to console
+console.log(findInvalidCards(batch));
 
 
