@@ -72,4 +72,35 @@ const findInvalidCards = arr => {
 //will print all invalid card numbers to console
 console.log(findInvalidCards(batch));
 
+const idInvalidCardCompanies = arr => {
+    let company = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[0] === 3 || arr[i][0] === 3){
+            if(company.indexOf("Amex") === -1){
+                company.push("Amex");
+            }
+        } else if(arr[0] === 4 || arr[i][0] === 4){
+            if(company.indexOf("Visa") === -1){
+                company.push("Visa");
+            }
+        } else if(arr[0] === 5 || arr[i][0] === 5){
+            if(company.indexOf("Mastercard") === -1){
+                company.push("Mastercard");
+            }
+        } else if(arr[0] === 6 || arr[i][0] === 6){
+            if(company.indexOf("Discover") === -1){
+                company.push("Discover")
+            }
+        } else {
+            "Company not found."
+        }
+    }
+    return company;
+};
 
+console.log(idInvalidCardCompanies(invalid1));
+console.log(idInvalidCardCompanies(invalid2));
+console.log(idInvalidCardCompanies(invalid3));
+console.log(idInvalidCardCompanies(invalid4));
+console.log(idInvalidCardCompanies(invalid5));
+console.log(idInvalidCardCompanies(batch));
